@@ -19,7 +19,7 @@ public class DatabaseManager {
      * with the correct corresponding data.
      *
      * @param data Recieved from the SensorData class
-     * @throws SQLException
+     * @throws SQLException provides information on a database access error or other errors.
      */
     public void saveSensorData(SensorData data) throws SQLException {
         String sql = "INSERT INTO sensor_data (sensor_type, value, timestamp) VALUES (?, ?, ?)";
