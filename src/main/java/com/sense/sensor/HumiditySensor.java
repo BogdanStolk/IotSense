@@ -15,9 +15,6 @@ public class HumiditySensor implements Sensor {
     private static final double MAX_HUMIDITY = 75.0;
     private static final double NOISE_FACTOR = 0.2;
 
-    // Retrieve current temperature to use in this class.
-    double temperatureData = new TemperatureSensor().generateData();
-
 
 
     // Declaring sensor type
