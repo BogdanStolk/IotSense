@@ -45,6 +45,7 @@ Configure the application.properties file with the correct PostgreSQL connection
 **Running the Application**
 
 To run the application, navigate to the root directory of the project and execute:
+
 mvn spring-boot:run
 
 This will start the application on the default port 8080.
@@ -66,6 +67,7 @@ DELETE /api/sensor-data/delete/{id} - Delete a sensor data record by ID.
 **Running Tests**
 
 To run the unit tests, execute:
+
 mvn test
 
 The tests cover a wide range of scenarios, including CRUD operations and sensor data generation logic.
