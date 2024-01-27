@@ -31,9 +31,7 @@ The project also includes a comprehensive suite of unit tests to validate the bu
 
 **Prerequisites**
 
-Java JDK 8 or higher
-Maven
-PostgreSQL
+Java JDK 8 or higher, Maven, PostgreSQL
 
 **Setting Up the Development Environment**
 
