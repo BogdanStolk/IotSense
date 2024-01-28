@@ -15,8 +15,6 @@ public class HumiditySensor implements Sensor {
     private static final double MAX_HUMIDITY = 75.0;
     private static final double NOISE_FACTOR = 0.2;
 
-
-
     // Declaring sensor type
     @Override
     public String getType() {
@@ -68,7 +66,6 @@ public class HumiditySensor implements Sensor {
         // Formula is similar to the seasonalVariation, with changes to simulate
         // daily fluctuations in humidity
         return 7 * Math.sin((2 * Math.PI / 24) * hour - (Math.PI / 2));
-
     }
 
     /**

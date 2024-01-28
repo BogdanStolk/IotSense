@@ -27,7 +27,7 @@ public class DatagenerationScheduler {
     }
 
 
-    @Scheduled(fixedRate = 5000) // executing every 10 seconds
+    @Scheduled(fixedRate = 10000) // executing every 10 seconds
     public void generateAndStoreData() {
         sensors.forEach(s -> {
             double value = s.generateData();
