@@ -11,7 +11,7 @@ import java.time.LocalTime;
 public class HumiditySensor implements Sensor {
 
     // Constant values for min & max humidity percentage + noise factor
-    private static final double MIN_HUMIDITY = 50.0;
+    private static final double MIN_HUMIDITY = 55.0;
     private static final double MAX_HUMIDITY = 75.0;
     private static final double NOISE_FACTOR = 0.2;
 

@@ -56,7 +56,7 @@ class SensorDataServiceTest {
         double temperatureValue = temperatureSensor.generateData();
 
         // Assert generated values within expected realistic ranges
-        assertTrue(humidityValue >= 60 && humidityValue < 100, "Unexpected humidity value: " + humidityValue);
+        assertTrue(humidityValue >= 55 && humidityValue < 100, "Unexpected humidity value: " + humidityValue);
         assertTrue(temperatureValue >= 0 && temperatureValue < 50, "Unexpected temperature value: " + temperatureValue);
 
         // Clear system property after the test to avoid conflicts with other tests
