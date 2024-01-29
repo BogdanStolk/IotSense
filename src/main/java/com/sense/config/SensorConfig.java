@@ -2,8 +2,6 @@ package com.sense.config;
 
 import com.sense.sensor.HumiditySensor;
 import com.sense.sensor.TemperatureSensor;
-import com.sense.sensor.User;
-import com.sense.sensor.UserData;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
