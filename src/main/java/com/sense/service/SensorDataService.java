@@ -2,6 +2,8 @@ package com.sense.service;
 
 import com.sense.model.SensorData;
 import com.sense.repository.SensorDataRepository;
+import com.sense.sensor.User;
+import com.sense.sensor.UserData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
