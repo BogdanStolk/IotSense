@@ -49,8 +49,6 @@ public class SensorDataService {
      * @return  The saved data object.
      */
     public SensorData save(SensorData sensorData) {
-        // Logging for saving
-        System.out.println(sensorData);
         return sensorDataRepository.save(sensorData);
     }
 
