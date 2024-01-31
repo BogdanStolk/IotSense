@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Data;
+
 import java.time.LocalDateTime;
 
 /**
@@ -11,6 +13,7 @@ import java.time.LocalDateTime;
  * Annotations with JPA annotations to define how the data is stored and
  * retrieved from the database.
  */
+@Data
 @Entity
 public class SensorData {
 
@@ -41,31 +44,6 @@ public class SensorData {
     }
 
 
-
-    // Getters & setters
-    public String getSensorType() {
-        return sensorType;
-    }
-
-    public double getValue() {
-        return value;
-    }
-
-    public LocalDateTime getTimestamp() {
-        return timestamp;
-    }
-
-    public void setSensorType(String sensorType) {
-        this.sensorType = sensorType;
-    }
-
-    public void setValue(double value) {
-        this.value = value;
-    }
-
-    public void setTimestamp(LocalDateTime timestamp) {
-        this.timestamp = timestamp;
-    }
 
     // Overridden to string method, for logging/debugging purposes
     @Override

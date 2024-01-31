@@ -22,8 +22,7 @@ public class SensorDataController {
      * @param sensorDataService service for managing sensor data.
      */
     @Autowired
-    public SensorDataController(SensorDataService sensorDataService,
-                                SensorDataRepository sensorDataRepository) {
+    public SensorDataController(SensorDataService sensorDataService, SensorDataRepository sensorDataRepository) {
         this.sensorDataService = sensorDataService;
         this.sensorDataRepository = sensorDataRepository;
     }
@@ -43,8 +42,9 @@ public class SensorDataController {
      * @param id Returns the ID from the sensor data in the Sensor data List.
      * @return Returns the Data found on the specific ID.
      */
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public ResponseEntity<SensorData> getSensorDataById(@PathVariable Long id) {
+
         return sensorDataService.findById(id)
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
@@ -76,6 +76,7 @@ public class SensorDataController {
                   sensorData.setSensorType(sensorDataDetails.getSensorType());
                   sensorData.setTimestamp(sensorDataDetails.getTimestamp());
                   return ResponseEntity.ok(sensorDataRepository.save(sensorData));
+
                 })
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
@@ -95,6 +96,16 @@ public class SensorDataController {
                 })
                 .orElseGet(() -> ResponseEntity.notFound().build());
 
+    }
+
+    /**
+     * API to return not found error
+     *
+     * @return ResponseEntity with an indicator of the operation.
+     */
+    @GetMapping("/notfound")
+    public ResponseEntity<String> getNotFound() {
+        return ResponseEntity.notFound().build();
     }
 
 

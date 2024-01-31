@@ -43,15 +43,6 @@ public class SensorDataService {
     }
 
     /**
-     * Delete sensor data by ID
-     *
-     * @param id The ID of the data to be deleted
-     */
-    public void deleteById(Long id) {
-        sensorDataRepository.deleteById(id);
-    }
-
-    /**
      * save sensor data record
      *
      * @param sensorData The data to be saved.
@@ -61,5 +52,14 @@ public class SensorDataService {
         // Logging for saving
         System.out.println(sensorData);
         return sensorDataRepository.save(sensorData);
+    }
+
+    /**
+     * Delete sensor data by ID
+     *
+     * @param id The ID of the data to be deleted
+     */
+    public void deleteById(Long id) {
+        sensorDataRepository.deleteById(id);
     }
 }
