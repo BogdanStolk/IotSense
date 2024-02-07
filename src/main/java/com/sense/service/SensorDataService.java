@@ -8,7 +8,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-// service class for managing data which provides CRUD operations
+/**
+ * Service class for the sensor data.
+ * This class is used to perform operations on the sensor data, to handle the HTTP requests for the sensor data
+ * from the controller, such as fetching, saving, and deleting records.
+ */
 @Service
 public class SensorDataService {
 

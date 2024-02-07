@@ -6,9 +6,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+ * Class responsible for managing the database connection and saving the sensor data.
+ */
 public class DatabaseManager {
 
-    private Connection connection;
+    private final Connection connection;
 
     public DatabaseManager(Connection connection) {
         this.connection = connection;
@@ -22,7 +25,9 @@ public class DatabaseManager {
      * @throws SQLException provides information on a database access error or other errors.
      */
     public void saveSensorData(SensorData data) throws SQLException {
+
         String sql = "INSERT INTO sensor_data (sensor_type, value, timestamp) VALUES (?, ?, ?)";
+
         try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setString(1, data.getSensorType());
             pstmt.setDouble(2, data.getValue());

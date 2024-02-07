@@ -70,6 +70,7 @@ public class SensorDataController {
      */
     @PutMapping
     public ResponseEntity<SensorData> getSensorDataById(@PathVariable Long id, @RequestBody SensorData sensorDataDetails) {
+
         return sensorDataService.findById(id)
                 .map(sensorData -> {
                   sensorData.setValue(sensorDataDetails.getValue());
@@ -89,13 +90,13 @@ public class SensorDataController {
      */
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> DeleteSensorDataById(@PathVariable Long id){
+
         return sensorDataService.findById(id)
                 .map(SensorData -> {
                     sensorDataService.deleteById(id);
                     return ResponseEntity.ok().build();
                 })
                 .orElseGet(() -> ResponseEntity.notFound().build());
-
     }
 
     /**

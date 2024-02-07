@@ -33,7 +33,10 @@ public class DataGenerator {
      * @return List of sensorData objects, displaying the specified data.
      */
     public List<SensorData> generateData() {
+
+        // new list of SensorData objects for the sensor data
         List<SensorData> sensorDataList = new ArrayList<>();
+
         for (Sensor sensor : sensors) {
             double value = sensor.generateData();
             SensorData data = new SensorData(sensor.getType(), value, LocalDateTime.now());

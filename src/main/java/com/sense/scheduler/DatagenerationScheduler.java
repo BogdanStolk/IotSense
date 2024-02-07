@@ -22,6 +22,7 @@ public class DatagenerationScheduler {
     private final List<Sensor> sensors;
 
     public DatagenerationScheduler(SensorDataService sensorDataService, List<Sensor> sensors) {
+
         this.sensorDataService = sensorDataService;
         this.sensors = sensors;
     }
@@ -29,12 +30,11 @@ public class DatagenerationScheduler {
 
     @Scheduled(fixedRate = 10000) // executing every 10 seconds
     public void generateAndStoreData() {
+
         sensors.forEach(s -> {
             double value = s.generateData();
             SensorData sensorData = new SensorData(s.getType(), value, LocalDateTime.now());
             sensorDataService.save(sensorData);
         });
     }
-
-
 }
